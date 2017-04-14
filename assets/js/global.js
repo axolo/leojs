@@ -1,17 +1,17 @@
 jQuery.support.cors = true
 
-var _API = 'http://localhost:8000/hkled/beta/api/index.php'
+var route = undefined !== querystring.parse().page ? querystring.parse().page : 'index'
 
-var _ROUTES = {
-  index: { title: '首页' },
-  admin: { title: '后台' },
-  form:  { title: '表单' },
-  sfctc: { title: '计件' }
+var app = {
+  api:    '//localhost/api',
+  el:     $('app'),
+  route:  route,
+  page:   ['pages', route, route].join('/'),
+  routes: {
+    index: { title: '首页' },
+    admin: { title: '后台' },
+    form:  { title: '表单' }
+  }
 }
 
-var request = querystring.parse()
-var route   = request.page || 'index'
-var page    = './pages/' + route + '/' + route
-var appEl = $('app')
-
-$('title').text(_ROUTES[route].title)
+$('title').text(app.routes[app.route].title)
