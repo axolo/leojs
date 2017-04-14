@@ -1,0 +1,42 @@
+<div id="title">
+  <h3>标题</h3>
+  <button>变色</button>
+</div>
+
+<div id="list">
+  <table border="1">
+    <thead>
+      <tr><th>内容</th><th>级别</th><th>文件</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>页面样式</td><td>全局</td><td>assets/css/app.css</td></tr>
+      <tr><td>标题样式</td><td>组件</td><td>&lt;script&gt;，XHR</td></tr>
+      <tr><td>标题事件</td><td>页内</td><td>pages/page/page.js</td></tr>
+      <tr><td>列表显示</td><td>全局</td><td>libs/dot.js/...</td></tr>
+      <tr><td>列表事件</td><td>组件</td><td>pages/page/page.js</td></tr>
+      <tr><td>列表加载</td><td>页内</td><td>pages/page/page.css</td></tr>
+      <tr><td>列表样式</td><td>页内</td><td>&lt;style&gt;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="data"><script id="tmpl" type="text/x-dot-template">
+  <h3>列表<span>（编译自doT.js）</span></h3>
+  <ul>{{~it:v:k}}
+    <li>{{=v}}</li>{{~}}
+  </ul></script>
+</div>
+
+<address>组件内部请勿以script src来加载js文件，以免产生拥塞</address>
+
+<!-- 页内脚本 -->
+<script>
+  $('div').on('click', 'button', function(e){
+    $(this).siblings('h3').toggleClass('red')
+  })
+</script>
+
+<!-- 页内样式表 -->
+<style>
+  #data li { color: blue }
+</style>
