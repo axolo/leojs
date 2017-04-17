@@ -1,7 +1,7 @@
 /**
  * LeoJS      -- a AOP HTML Framework based on jQuery
  * @version   0.0.1
- * @Author    Yueming Fang
+ * @author    Yueming Fang
  */
 try {
   $.getScript('assets/js/global.js?' + Math.random(), function() {        // Load Global Script (App config ...)
