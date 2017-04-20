@@ -1,9 +1,9 @@
 [
-  "Apple",
-  "Google",
-  "Microsoft",
-  "Huawei",
-  "Tencent",
-  "Alibaba",
-  "Baidu"
+  { "nick":"苹果", "name": "Apple" },
+  { "nick":"谷歌", "name": "Google" },
+  { "nick":"微软", "name": "Microsoft" },
+  { "nick":"华为", "name": "Huawei" },
+  { "nick":"腾讯", "name": "Tencent" },
+  { "nick":"阿里巴巴", "name": "Alibaba" },
+  { "nick":"百度", "name": "Baidu" }
 ]

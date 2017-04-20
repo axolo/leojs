@@ -1,23 +1,13 @@
 /**
  * LeoJS      -- a AOP HTML Framework based on jQuery
- * @version   0.0.1
+ * @version   0.0.2
  * @author    Yueming Fang
  */
 try {
-  $.getScript('assets/js/global.js?' + Math.random(), function() {        // Load Global Script (App config ...)
-    $.ajax({
-      url: app.page + '.html?' + Math.random(),                           // Load Component HTML
-      success: function(res) {
-        $('head').append('<link rel="stylesheet" href="'                  // Load Component Style
-          + app.page + '.css?' + Math.random() + '">')
-        app.el.html(res)                                                  // Filled Component Element
-        $.getScript(app.page + '.js?' + Math.random(), function() {       // Load Component Script
-        })
-      },
-      error: function(err) {
-        throw err
-      }
-    })
+  $.getScript('assets/js/global.js', function() {                               // Load Global Script
+    $('head').append('<link rel="stylesheet" href="' + app.page + '.css">')     // Load Component Style
+    app.el.load(app.page + '.html')                                             // Load Component HTML
+    $.getScript(app.page + '.js')                                               // Load Component Script
   })
 } catch(err) {
   console.log(err)

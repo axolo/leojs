@@ -7,6 +7,7 @@ $.ajax({
   }
 })
 
-$('#data').on('click', 'li', function(e){
-  console.log($(this).text())
+$('#data').on('click', 'li', function(e) {
+  $(this).toggleClass('click')
+  $(this).children('span').toggle()
 })
