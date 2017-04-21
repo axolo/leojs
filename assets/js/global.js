@@ -7,11 +7,14 @@ var app = {
   el:     $('app'),
   route:  route,
   page:   ['pages', route, route].join('/'),
-  routes: {
-    index: { title: '首页' },
-    admin: { title: '后台' },
-    form:  { title: '表单' }
-  }
+  routes: [
+    { name: 'index',  title: '首页' },
+    { name: 'demo',  title: '演示' },
+    { name: 'admin',  title: '后台' },
+    { name: 'form', title: '表单' }
+  ]
 }
 
-$('title').text(app.routes[app.route].title)
+var i = _.findIndex(app.routes, { name: route })
+
+$('title').text(-1 === i ? 'untitled' : app.routes[i].title)

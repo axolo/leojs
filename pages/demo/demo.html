@@ -1,0 +1,56 @@
+<div id="title">
+  <h3>演示</h3>
+  <button>变色</button>
+</div>
+
+<div id="list">
+  <table border="1">
+    <thead>
+      <tr><th>内容</th><th>事件</th><th>级别</th><th>文件</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>页面样式</td><td>填充底色</td><td>全局</td><td>assets/css/app.css</td></tr>
+      <tr><td>标题样式</td><td>切换颜色</td><td>组件</td><td>pages/page/page.css</td></tr>
+      <tr><td>列表样式</td><td>点击变色</td><td>页内</td><td>&lt;style&gt;</td></tr>
+      <tr><td>列表事件</td><td>展现列表</td><td>全局</td><td>libs/dot.js/...</td></tr>
+      <tr><td>列表事件</td><td>点击变色</td><td>组件</td><td>pages/page/page.js</td></tr>
+      <tr><td>列表事件</td><td>点击弹窗</td><td>页内</td><td>&lt;script&gt;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="data"><script id="tmpl" type="text/x-dot-template">
+  <h3>列表<span>（编译自doT.js）</span></h3>
+  <ol>{{~it:v:k}}
+    <li>{{=v.name}}<span>{{=v.nick}}</span></li>{{~}}
+  </ol></script>
+</div>
+
+<address>
+  <ul>
+    <li>组件内部请勿以script src来加载js文件，以免产生拥塞。</li>
+    <li>本示例组件HTML内嵌js脚本及css样式，允许内嵌，但不建议。</li>
+  </ul>
+</address>
+
+<!-- 页内脚本 -->
+<script>
+  $('#title').on('click', 'button', function(e){
+    $(this).siblings('h3').toggleClass('red')
+  })
+
+  $('#data').on('click', 'li', function(e){
+    alert($(this).text())
+  })
+</script>
+
+<!-- 页内样式表 -->
+<style>
+  #data li.click {
+    background-color: yellow;
+  }
+  #data li span {
+    padding-left: 10px;
+    display: none;
+  }
+</style>

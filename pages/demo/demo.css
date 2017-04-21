@@ -1,0 +1,25 @@
+div {
+  margin-bottom: 5px;
+}
+
+address {
+  background-color: #c69;
+}
+
+th, td {
+  padding: 3px;
+  font-size: 0.9em;
+}
+
+.red {
+  color: red;
+}
+
+#title * {
+  display: inline-block;
+}
+
+#data span {
+  font-weight: normal;
+  font-size: 0.8em;
+}
