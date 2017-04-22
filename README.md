@@ -1,6 +1,12 @@
 说明
 ====
 
+* TODO
+  * 统一global.js和app.js
+  * 模块化设计，使用exports，兼容浏览器&lt;script&gt;及Node.js require
+  * 设计加载预处理（pre load）及加载后处理（post load）
+
+
 * 统一入口
   * index.html?page=page
 

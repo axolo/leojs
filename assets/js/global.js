@@ -1,12 +1,11 @@
-jQuery.support.cors = true
+// require Lodash, jQuery, querystring
 
-var route = undefined !== querystring.parse().page ? querystring.parse().page : 'index'
-
-var app = {
-  api:    '//localhost/api',
-  el:     $('app'),
-  route:  route,
-  page:   ['pages', route, route].join('/'),
+// config (require)
+var config = {
+  el:  $('app'),
+  api: '../api',
+  route: undefined !== querystring.parse().page ? querystring.parse().page : 'index',
+  env: 'development',
   routes: [
     { name: 'index',  title: '首页' },
     { name: 'demo',  title: '演示' },
@@ -15,6 +14,20 @@ var app = {
   ]
 }
 
-var i = _.findIndex(app.routes, { name: route })
+// pre load
+jQuery.support.cors = true
 
+// app (exports)
+var app = {
+  config: config,
+  el: this.config.el,                                                 // root element
+  cache: 'development' === this.config.env ? '?_=' + _.now() : '',    // browser cached
+  page: ['pages', this.config.route, this.config.route].join('/'),    // current page dir
+  route: this.config.route,                                           // current route
+  api: this.config.api,                                               // api (optional)
+  routes: this.config.routes                                          // routes (optional)
+}
+
+// post load
+var i = _.findIndex(app.routes, { name: app.route })
 $('title').text(-1 === i ? 'untitled' : app.routes[i].title)
