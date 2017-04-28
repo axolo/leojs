@@ -1,8 +1,8 @@
 {
   "name": "leojs",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "a AOP Javascript AOP HTML Framework based on jQuery",
-  "main": "index.js",
+  "main": "leojs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
