@@ -20,7 +20,7 @@
 </div>
 
 <div id="data"><script id="tmpl" type="text/x-dot-template">
-  <h3>列表<span>（编译自doT.js）</span></h3>
+  <h3>列表<span>（模版编译自doT.js，数据源自/data/data.json）</span></h3>
   <ol>{{~it:v:k}}
     <li>{{=v.name}}<span>{{=v.nick}}</span></li>{{~}}
   </ol></script>
@@ -28,8 +28,9 @@
 
 <address>
   <ul>
-    <li>组件内部请勿以script src来加载js文件，以免产生拥塞。</li>
-    <li>本示例组件HTML内嵌js脚本及css样式，允许内嵌，但不建议。</li>
+    <li>从外部、组件、页内三个纬度分别加载样式表和脚本。</li>
+    <li>组件的HTML页存在页内js脚本及页内css样式，允许存在，但不建议。</li>
+    <li>组件的HTML页内请勿以&lt;script src=...&gt;来加载js文件，以免产生拥塞（警告）。</li>
   </ul>
 </address>
 

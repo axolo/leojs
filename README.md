@@ -79,6 +79,3 @@ a JavaScript framework for AOP HTML based on jQuery.
 
 * run()
   * app run
-
-
-> Yueming Fang
