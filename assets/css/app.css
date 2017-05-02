@@ -1,3 +1,16 @@
-body {
-  background-color: #eee;
+header {
+  margin-bottom: 2%;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+footer {
+  margin-top: 2%;
 }

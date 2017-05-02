@@ -9,17 +9,21 @@
 </head>
 <body>
 
-  <header>Header</header>
-  <ul>
-    <li><a href="/leojs/">main</a></li>
-    <li><a href="/leojs/#/admin">admin</a></li>
-  </ul>
+  <header>
+    <ul>
+      <li><a rel="route" href="#/main">main</a></li>
+      <li><a rel="route" href="#/demo">demo</a></li>
+      <li><a rel="route" href="#/form">form</a></li>
+    </ul>
+  </header>
+
   <router>Loading...</router>
-  <footer>Footer</footer>
+
+  <footer>&copy;2017, woodso.com</footer>
 
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script>
   <script src="libs/leojs/0.1.0/leojs.js"></script>
-  <script>leojs.run()</script>
+  <script>var app = leojs; app.run()</script>
 </body>
 </html>

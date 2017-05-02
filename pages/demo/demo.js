@@ -1,7 +1,7 @@
 var tmpl = doT.template($('#tmpl').text())
 
 $.ajax({
-  url: 'pages/demo/data.json',
+  url: app.base + '/data/data.json',
   success: function(data) {
     $('#data').html(tmpl(data))
   }
