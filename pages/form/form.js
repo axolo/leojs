@@ -1,6 +1,5 @@
 $('form').on('click', 'button', function(e){
 
-
   var data = new FormData()
 
   // form
@@ -20,7 +19,6 @@ $('form').on('click', 'button', function(e){
       data.append('file[]', file)
   })
 
-
   // submit
   $.ajax({
     url: app.base + '/data/form.php',
@@ -29,8 +27,11 @@ $('form').on('click', 'button', function(e){
     contentType: false,
     cache: false,
     processData: false,
-    success: function(data){
-        console.log(data)
+    success: function(res){
+      console.log(res)
+    },
+    error: function(err) {
+      console.log(err)
     }
   })
 

@@ -1,6 +1,12 @@
 LeoJS
 ======
-a JavaScript framework for AOP HTML based on jQuery.
+a JavaScript framework for HTML5 AOP based on jQuery.
+
+
+### TODO
+
+* single method to recursive parser: app.json -> main.json -> partial.json -> ...
+* http://stackoverflow.com/questions/7083550/jquery-getscript
 
 
 ### Tree
@@ -23,7 +29,7 @@ a JavaScript framework for AOP HTML based on jQuery.
 ### Example for page.json
 
 * a page have element and partials.
-* partial maybe have a element tag name :)
+* partial maybe have a named element :)
 * default page element: router
 
 ```
@@ -44,7 +50,7 @@ a JavaScript framework for AOP HTML based on jQuery.
   ```
   <script src="libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="libs/leojs/0.1.0/leojs.js"></script>
-  <script>leojs.run()</script>
+  <script>app.run()</script>
   ```
 
 * router link, `rel="route"` is required.
